@@ -1,10 +1,14 @@
 Enter command line arguments: 
+
 view 21
+
 You have entered Id : 21
+
 Product not found
 
 
 list
+
 ID    | Price    | Product Title
 1 | 109.95 | Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
 2 | 22.3 | Mens Casual Premium Slim Fit T-Shirts 
@@ -29,10 +33,13 @@ ID    | Price    | Product Title
 
 
 view 5
+
 You have entered Id : 5
+
 ID: 5 | Description: From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection. | Category: jewelery
 
 exit
+
 Disconnected from the target VM, address: '127.0.0.1:64727', transport: 'socket'
 
 Process finished with exit code 0
