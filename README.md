@@ -1,13 +1,26 @@
 Enter command line arguments: 
 
-view 21
+**view 21**
 
 You have entered Id : 21
 
 Product not found
 
+Enter command line arguments: 
+**add**
+Enter Title
+Java programming
+Enter Price
+10000
+Enter Description
+Java for beginners
+Enter Category
+books
+Successfully Added product : 21
 
-list
+
+Enter command line arguments: 
+**list**
 
 ID    | Price    | Product Title
 1 | 109.95 | Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
@@ -32,13 +45,13 @@ ID    | Price    | Product Title
 20 | 12.99 | DANVOUY Womens T Shirt Casual Cotton Short
 
 
-view 5
+**view 5**
 
 You have entered Id : 5
 
 ID: 5 | Description: From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection. | Category: jewelery
 
-exit
+**exit**
 
 Disconnected from the target VM, address: '127.0.0.1:64727', transport: 'socket'
 
