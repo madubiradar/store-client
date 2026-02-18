@@ -1,0 +1,2 @@
+environment:
+  base-url: {`BASE_URL`,``} #placeholder for secrets can be fetched from vault/secrets during deployment
