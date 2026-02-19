@@ -5,4 +5,6 @@ spring:
     web-application-type: none
   profiles:
     active: dev
-
+  shell:
+    interactive:
+      enabled: true  # Use a colon and a space, not an equals sign

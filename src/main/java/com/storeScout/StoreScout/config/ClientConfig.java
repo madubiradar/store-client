@@ -33,10 +33,5 @@ public class ClientConfig {
 
         return factory.createClient(StoreClient.class);
 
-
-
-
-
-
     }
 }
