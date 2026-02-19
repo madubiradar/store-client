@@ -1,6 +1,9 @@
-package com.storeScout.StoreScout.cli;
+package com.storeScout.StoreScout.service;
 
 import com.storeScout.StoreScout.client.StoreClient;
+import com.storeScout.StoreScout.model.Product;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
@@ -9,18 +12,24 @@ import org.springframework.shell.standard.ShellOption;
 import java.util.List;
 
 @ShellComponent
-public class Commands {
+public class ProductService {
+
+    private final Logger logger = LoggerFactory.getLogger(ProductService.class);
 
     StoreClient storeClient;
 
     @Autowired
-    public Commands(StoreClient storeClient) {
+    public ProductService(StoreClient storeClient) {
         this.storeClient = storeClient;
     }
 
+    /**
+     * This method fetches all products
+     * @return list of all products
+     */
     @ShellMethod(key = "list")
     public void listAllProducts() {
-        System.out.println("ID    | Price    | Product Title");
+        logger.info("ID    | Price    | Product Title");
         List<Product> productList = storeClient.findAll();
         productList.stream()
                 .map(p -> p.getId() + " | " + p.getPrice() + " | " + p.getTitle())
@@ -28,6 +37,10 @@ public class Commands {
 
     }
 
+    /**
+     * This method fetches a product by id
+     * @param id
+     */
     @ShellMethod(key = "view")
     public void viewProduct(@ShellOption Integer id) {
         Product p = storeClient.findById(id);
@@ -37,9 +50,17 @@ public class Commands {
             System.out.printf("Title: %s%n", p.getTitle());
             System.out.printf("Price: $%.2f%n", p.getPrice());
         } else {
-            System.out.println("Product not found!");
+            logger.warn("Product not found!");
         }
     }
+
+    /**
+     * This method interactively add product to store
+     * @param title
+     * @param price
+     * @param description
+     * @param category
+     */
 
     @ShellMethod(key = "add")
     public void addProduct(
@@ -48,17 +69,14 @@ public class Commands {
             @ShellOption String description,
             @ShellOption String category
     ) {
-        // 1. Create the product object using the parameters
         Product product = new Product();
         product.setTitle(title);
         product.setPrice(price);
         product.setDescription(description);
         product.setCategory(category);
 
-        // 2. Call the API
         Product addedProduct = storeClient.addProduct(product);
 
-        // 3. Feedback
-        System.out.println("Successfully Added product! Assigned ID: " + addedProduct.getId());
+        logger.info("Successfully Added product! Assigned ID: {}", addedProduct.getId());
     }
 }

@@ -1,6 +1,6 @@
 package com.storeScout.StoreScout.client;
 
-import com.storeScout.StoreScout.cli.Product;
+import com.storeScout.StoreScout.model.Product;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.service.annotation.GetExchange;
