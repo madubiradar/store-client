@@ -23,12 +23,14 @@ ID    | Price    | Product Title
 20 | 12.99 | DANVOUY Womens T Shirt Casual Cotton Short
 
 shell:>view 5
+
 --- PRODUCT DETAILS ---
 ID   : 5
 Title: John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet
 Price: $695.00
 
 shell:>add "Kafka: The Defintive Guide" 2000.50 "Event Driven Architecture for complete begineers" "books"
+
 Successfully Added product! Assigned ID: 21
 
 shell:>exit
