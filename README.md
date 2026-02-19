@@ -1,6 +1,7 @@
 shell:>list
 
 ID    | Price    | Product Title
+
 1 | 109.95 | Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
 2 | 22.3 | Mens Casual Premium Slim Fit T-Shirts 
 3 | 55.99 | Mens Cotton Jacket
@@ -25,8 +26,11 @@ ID    | Price    | Product Title
 shell:>view 5
 
 --- PRODUCT DETAILS ---
+
 ID   : 5
+
 Title: John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet
+
 Price: $695.00
 
 shell:>add "Kafka: The Defintive Guide" 2000.50 "Event Driven Architecture for complete begineers" "books"
